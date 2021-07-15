@@ -1,0 +1,27 @@
+.auth-title {
+    color: #000000;
+    font-family: Changa;
+    font-weight: bolder;
+    border-bottom: 3px solid var(--color-contrast);
+    font-size: 1.25rem;
+    margin: 1px auto;
+}
+
+.authentication {
+    width: 90%;
+    max-width: 33rem;
+    margin: 1rem auto;
+    text-align: center;
+    background-color: var(--color-login);
+    box-shadow: 8px 8px 22px #acacac;
+}
+
+.authentication form {
+    margin-bottom: 1rem;
+}
+
+.auth-view {
+    min-height: 100vh;
+    padding: 10% 0;
+    background-color: gainsboro;
+}

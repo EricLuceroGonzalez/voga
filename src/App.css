@@ -1,0 +1,91 @@
+/* override browser default */
+
+html,
+body {
+    height: 100%;
+    /* padding: 0; */
+}
+
+
+/* FUENTES: */
+
+
+/* Train One */
+
+
+/* Big Shoulders Inline Text */
+
+
+/* Bungee Outline */
+
+body {
+    /* height: 100vh; */
+    /* width: 100vw; */
+    display: flex;
+    flex-direction: column;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.content {
+    flex: 1 0 auto;
+}
+
+.App {
+    text-align: center;
+}
+
+.App-logo {
+    height: 40vmin;
+    pointer-events: none;
+    font-size: 3rem;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .App-logo {
+        animation: App-logo-spin infinite 10s linear;
+    }
+}
+
+.App-header {
+    background-color: #282c34;
+    /* min-height: 100vh; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: white;
+}
+
+@keyframes App-logo-spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.borderA {
+    border: 1px solid red;
+}
+
+.borderB {
+    border: 2px solid cyan;
+}
+
+.borderC {
+    border: 2px solid violet;
+}
+
+:root {
+    --color-primary: black;
+    --color-secondary: #ffffff;
+    --color-white: #ffffff;
+    /* --color-text: ; */
+    --color-contrast: #05b8ff;
+    --color-login: #acacac;
+    --color-red: #eb3947;
+    --neon-text-color: #f40;
+    /* --color-blue: #0487d9; */
+}

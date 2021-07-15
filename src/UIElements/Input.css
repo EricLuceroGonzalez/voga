@@ -1,0 +1,85 @@
+.form-control {
+    margin: 4.5rem 0;
+    /* padding: 2.4rem 0; */
+    border: none;
+    background-color: inherit;
+    font-size: 0.75rem;
+}
+
+.form-control label,
+.form-control input,
+.form-control textarea {
+    display: block;
+}
+
+.form-control label {
+    background-color: none;
+    margin-bottom: 0.15rem;
+    color: var(--color-secondary);
+    font-size: 1.5rem;
+    font-family: Changa;
+    font-weight: 900;
+    text-shadow: 2px 2px 5px black;
+}
+
+.form-control input,
+.form-control textarea {
+    width: 93%;
+    font: inherit;
+    border: 1px solid var(--color-secondary);
+    border-radius: 12px;
+    background-color: inherit;
+    padding: 0.5rem 0.35rem;
+    color: var(--color-contrast);
+    font-size: 1.33rem;
+    font-family: Changa;
+    font-weight: 900;
+}
+
+.form-control input:focus,
+.form-control textarea:focus {
+    outline: none;
+    background: inherit;
+    border: 2px solid var(--color-contrast);
+    color: var(--color-secondary);
+}
+
+@media only screen and (max-width: 767px) {
+    .form-control input,
+    .form-control textarea {
+        font-size: 0.85rem;
+        font-family: Changa;
+        font-weight: 900;
+    }
+}
+
+.form-control--invalid label,
+.form-control--invalid p {
+    color: var(--color-red);
+    /* font-size: 0.45rem; */
+}
+
+.form-control--invalid input,
+.form-control--invalid textarea {
+    border-color: var(--color-red);
+    background: var(--color-red);
+    opacity: 0.2;
+}
+
+
+/* Change Autocomplete styles in Chrome*/
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+    border: 2px solid var(--color-contrast);
+    color: var(--color-secondary);
+    -webkit-text-fill-color: var(--color-contrast);
+    transition: background-color 5000s ease-in-out 0s;
+}

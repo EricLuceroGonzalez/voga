@@ -1,0 +1,87 @@
+.img-container {
+  box-shadow: 1px 6.7px 5.3px rgba(0, 0, 0, 0.028),
+    6px 22.3px 13.9px rgba(0, 0, 0, 0.042), 12px 60px 60px rgba(0, 0, 0, 0.07);
+  /* top: 50%; */
+  /* left: 50%; */
+  transform: translate(-50%, -50%);
+}
+.square {
+  width: 100%;
+  height: 35%;
+  /* border: 5px solid black; */
+  position: absolute;
+  padding: 30px 0;
+}
+.original {
+  /* background: red; */
+  top: 50px;
+  left: 50%;
+  z-index: 2;
+  animation: phantomShift 6.6s infinite ease-in;
+}
+.blue {
+  /* background: blue; */
+  top: 50px;
+  left: 47%;
+  z-index: 1;
+  animation: blueShift 2.82s infinite ease-in;
+}
+.red {
+  /* background: red; */
+  top: 50px;
+  left: 50%;
+  z-index: 1;
+  animation: redShift 2.78s infinite ease-in-out;
+}
+.target {
+  margin: 10px auto;
+  left: 0;
+}
+
+@keyframes redShift {
+  0% {
+    left: 50%;
+  }
+  50% {
+    left: 51%;
+  }
+  100% {
+    left: 50%;
+  }
+}
+
+@keyframes blueShift {
+  0% {
+    left: 50%;
+  }
+  50% {
+    left: 49%;
+  }
+  100% {
+    left: 50%;
+  }
+}
+
+@keyframes phantomShift {
+  0% {
+    opacity: 0.33;
+  }
+  3% {
+    opacity: 1;
+  }
+  52% {
+    opacity: 1;
+  }
+  53% {
+    opacity: 0.33;
+  }
+  54% {
+    opacity: 1;
+  }
+  55% {
+    opacity: 0.33;
+  }
+  56% {
+    opacity: 1;
+  }
+}
