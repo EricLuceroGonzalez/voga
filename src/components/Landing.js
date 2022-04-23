@@ -1,13 +1,15 @@
-import React, { useState } from "react";
+import React, { useState, useLayoutEffect, useEffect } from "react";
 import "./Landing.css";
 import Button from "../UIElements/Button";
 import FormCompo from "./FormComponent";
+import MapChart from "./MapComponent";
 // const FormCompo = React.lazy(() => {
 // import("./FormComponent");
 // });
 
 const Landing = () => {
   const [showModal, setShowModal] = useState(false);
+  const [size, setSize] = useState([0, 0]);
 
   const errorHandler = () => {
     setShowModal(false);
@@ -16,22 +18,27 @@ const Landing = () => {
   const openCloseModal = () => {
     setShowModal(!showModal);
   };
+  //! Get window size
+  useLayoutEffect(() => {
+    function updateSize() {
+      setSize([window.innerWidth, window.innerHeight]);
+    }
+    window.addEventListener("resize", updateSize);
+    updateSize();
+console.log(size);
+    return () => window.removeEventListener("resize", updateSize);
+  }, []);
 
   return (
     <React.Fragment>
       <div className="total-bg">
-        {/* <div className="landing-container"> */}
         <div className="name-brand col-12 mr-auto ml-auto">
-          {/* {!showModal && ( */}
             <img
               className={`mt-3 ${!showModal ? 'fade-in-left' : ''}`}
               alt="Artist on a bike"
               src="https://res.cloudinary.com/dcvnw6hvt/image/upload/v1626381372/voga/kooky/logo-kooky_nb2h1c.png"
             />
-          {/* )} */}
         </div>
-        {/* <div className=" col-12 borderA"></div> */}
-        {/* <div className=" col-12 borderB"></div> */}
         <div className="d-flex flex-column flex-md-row flex-lg-column text-cover-div">
           {!showModal && (
             <div className="landing-text mt-3 col-12 col-md-6 col-lg-12 fade-in-right">

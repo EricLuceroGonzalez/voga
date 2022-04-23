@@ -71,11 +71,11 @@ body {
 }
 
 .borderB {
-    border: 2px solid cyan;
+    border: 1px solid cyan;
 }
 
 .borderC {
-    border: 2px solid violet;
+    border: 1px solid violet;
 }
 
 :root {

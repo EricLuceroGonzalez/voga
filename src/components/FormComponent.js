@@ -70,7 +70,6 @@ const FormCompo = (props) => {
       }
     };
 
-    console.log(acceptData);
     if (acceptData && props.showModal) {
       getIPAddress();
     }
@@ -78,10 +77,10 @@ const FormCompo = (props) => {
     return () => {
       setHasValue(false);
     };
-  }, [acceptData,hasValue, props.showModal, ipValue, sendRequest]);
+  }, [acceptData, hasValue, props.showModal, ipValue, sendRequest]);
 
   const sendData = async () => {
-    console.log('sendData');
+    // console.log("sendData");
     const data = {
       name: formState.inputs.name.value,
       email: formState.inputs.email.value,
@@ -90,6 +89,10 @@ const FormCompo = (props) => {
       country: ipValue.country_name,
       city: ipValue.city,
       state: ipValue.state,
+      location: {
+        lat: ipValue.latitude,
+        lon: ipValue.longitude,
+      },
       windowW: size[0],
       windowH: size[1],
     };
@@ -183,8 +186,8 @@ const FormCompo = (props) => {
                 <Link to="/terminosYCondiciones" target="_blank">
                   políticas de privacidad
                 </Link>{" "}
-                del artista y recibir noticias, contenidos,
-                comunicaciones relacionados a la marca.
+                del artista y recibir noticias, contenidos, comunicaciones
+                relacionados a la marca.
               </label>
             </div>
           </React.Fragment>

@@ -20,7 +20,7 @@ const TableCompo = () => {
   const headers = [
     { label: "Nombre", key: "name" },
     { label: "Genero", key: "gender" },
-    { label: "Pais", key: "country" },
+    { label: "País", key: "country" },
     { label: "Correo", key: "email" },
     { label: "Ip", key: "IPv4" },
     { label: "Creado", key: "creationDate" },

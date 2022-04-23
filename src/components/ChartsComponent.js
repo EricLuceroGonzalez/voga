@@ -7,6 +7,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUserCheck, faUserClock } from "@fortawesome/free-solid-svg-icons";
 import "./Charts.css";
 import TimeClock from "./TimeClock";
+import MapChart from "./MapComponent";
 
 const ChartsComponent = (props) => {
   const [genderN, setGenderN] = useState({ genre: "" });
@@ -16,6 +17,7 @@ const ChartsComponent = (props) => {
   const [hoursOfDay, setHoursOfDay] = useState([]);
   const [timeSerie, setTimeSerie] = useState([]);
   const [totalN, setTotalN] = useState("");
+  const [locations, setLocations] = useState([]);
   const [userDevice, setUserDevice] = useState([]);
   const [lastOne, setLastOne] = useState("");
   useEffect(() => {
@@ -28,6 +30,13 @@ const ChartsComponent = (props) => {
       let hoursAday;
       let timeline;
       let userSystem;
+      let location = [];
+
+      props.data.map((item) => {
+        if (item.location) {
+          location.push(item.location);
+        }
+      });
       genders = props.data.map((item) => {
         return item.gender;
       });
@@ -61,7 +70,7 @@ const ChartsComponent = (props) => {
       timeline = props.data.map((item) => {
         return moment(item.creationDate).format("l").split(":")[0];
       });
-
+      setLocations(location);
       setGenderN((prevState) => ({
         ...prevState,
         genre: {
@@ -128,6 +137,14 @@ const ChartsComponent = (props) => {
         {genderN ? <GenderChart data={genderN.genre} /> : ""}
       </div>
       <div className="col-12 col-md-12 col-xl-12 mr-auto ml-auto">
+        <div className="d-flex flex-column flex-lg-row col-12">
+          <div className="col-0 col-lg-4"></div>
+          <div className="chart-box col-12 col-lg-4">
+            <div className="col-0 col-lg-4"></div>
+            <MapChart location={locations}/>
+          </div>
+        </div>
+
         <div className="d-flex flex-column flex-lg-row col-12">
           <div className="chart-box col-12 col-lg-6">
             {timeSerie ? (
