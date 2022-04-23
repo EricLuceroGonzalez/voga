@@ -89,10 +89,8 @@ const FormCompo = (props) => {
       country: ipValue.country_name,
       city: ipValue.city,
       state: ipValue.state,
-      location: {
-        lat: ipValue.latitude,
-        lon: ipValue.longitude,
-      },
+      lat: ipValue.latitude,
+      lon: ipValue.longitude,
       windowW: size[0],
       windowH: size[1],
     };
